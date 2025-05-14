@@ -191,4 +191,26 @@ public class Leaderboard extends JFrame {
 		return text;
 	}
 
+	
+	/**
+	 * This record is used to make objects which easily keep high scores and their associated users together. 
+	 * 
+	 * @author Jacob Eager
+	 * @version 1.0
+	 */
+
+	private record HighScore(String user, int score) implements Comparable<HighScore> {
+
+		@Override
+		public String toString() {
+			String stringRep = user + ": " + score;
+			return stringRep;
+		}
+
+		@Override
+		public int compareTo(HighScore other) {
+			return Integer.compare(other.score, this.score);
+		}
+
+}
 }
