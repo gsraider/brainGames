@@ -23,6 +23,7 @@ import javax.swing.JTextArea;
  * @author Jacob Eager
  * @version 1.0
  */
+
 public class Leaderboard extends JFrame {
 
 	// Version ID
@@ -107,7 +108,7 @@ public class Leaderboard extends JFrame {
 	}
 	
 	/**
-	 * Takes the data from a given text path and turns it into a string to be shown.
+	 * Takes the data from a given text path and turns it into a string to be displayed.
 	 * @param filePath the path of the leaderboard file
 	 * @return a text representation of the sorted leaderboard
 	 */
@@ -193,7 +194,7 @@ public class Leaderboard extends JFrame {
 
 	
 	/**
-	 * This record is used to make objects which easily keep high scores and their associated users together. 
+	 * This record is used to make objects which track high scores and their associated users together. 
 	 * 
 	 * @author Jacob Eager
 	 * @version 1.0

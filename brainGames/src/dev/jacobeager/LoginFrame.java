@@ -37,17 +37,14 @@ public class LoginFrame extends JFrame implements ActionListener {
 	
 	// Username and password strings for possible storage/validation later
 	protected static final String DEFAULT_USERNAME = "Guest";
-
-	// Default state (not logged in)
-	boolean loggedIn = false;
 	
 	// Default state
-	boolean loginSuccessful = false;
+	private boolean loginSuccessful = false;
 	
 	// Components used by the actionPerformed method
-	JButton submitButton, exitButton;
-	JTextField usernameField;
-	JPasswordField passwordField;
+	private JButton submitButton, exitButton;
+	private JTextField usernameField;
+	private JPasswordField passwordField;
 	
 	/**
 	 * This constructor creates the GUI.

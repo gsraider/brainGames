@@ -39,20 +39,20 @@ public class QuizBowl extends JFrame implements Game {
 	/**
 	 * The current score. Increases by one for every question solved.
 	 */
-	int score = 0;
+	private int score = 0;
 	
 	/**
 	 * An ArrayList that stores the text file data for all multiple choice questions.
 	 */
-	ArrayList<MultipleChoiceQuestion> multQuestions = new ArrayList<MultipleChoiceQuestion>();
+	private ArrayList<MultipleChoiceQuestion> multQuestions = new ArrayList<MultipleChoiceQuestion>();
 	
 	/**
 	 * An ArrayList that stores the text file data for all text questions.
 	 */
-	ArrayList<TextQuestion> textQuestions = new ArrayList<TextQuestion>();
+	private ArrayList<TextQuestion> textQuestions = new ArrayList<TextQuestion>();
 	
 	// Declared as fields because their contents change depending on question type
-	JPanel upperPanel, lowerPanel;
+	private JPanel upperPanel, lowerPanel;
 
 	/**
 	 * Constructor that creates the GUI and begins the game.
@@ -86,7 +86,7 @@ public class QuizBowl extends JFrame implements Game {
 	 * 3/4 chance of multiple choice question 
 	 * 1/4 chance of text question
 	 */
-	public void generateQuestion() {
+	private void generateQuestion() {
 		
 		Random r = new Random();
 
@@ -253,7 +253,7 @@ public class QuizBowl extends JFrame implements Game {
 	 * Pulls a random multiple choice question from the ArrayList.
 	 * @return the question selected
 	 */
-	public MultipleChoiceQuestion getMultipleChoiceQuestion() {
+	private MultipleChoiceQuestion getMultipleChoiceQuestion() {
 		
 		Random r = new Random();
 		
@@ -324,7 +324,7 @@ public class QuizBowl extends JFrame implements Game {
 	 * Pulls a random text question from the ArrayList.
 	 * @return the question selected
 	 */
-	public TextQuestion getTextQuestion() {
+	private TextQuestion getTextQuestion() {
 		
 		Random r = new Random();
 		
@@ -381,6 +381,8 @@ public class QuizBowl extends JFrame implements Game {
 	 * Signals to the user that the game is over, stopping the game and displaying 
 	 * the user's score.
 	 */
+	
+	@Override
 	public void gameOver() {
 		
 		// Removes previous formatting

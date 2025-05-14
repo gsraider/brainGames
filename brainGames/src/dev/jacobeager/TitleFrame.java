@@ -35,12 +35,12 @@ public class TitleFrame extends JFrame implements ActionListener {
 	 * Current username, kept track of here to be displayed. Also used for printing high scores.
 	 * Set to Guest by default.
 	 */
-	String currUsername = LoginFrame.DEFAULT_USERNAME;
+	protected String currUsername = LoginFrame.DEFAULT_USERNAME;
 	
 	// Components that use/are effected by ActionListeners
-	JButton loginButton, leaderboardButton;
-	GameButton wordleButton, quizBowlButton, hangmanButton;
-	JLabel usernameLabel;
+	private JButton loginButton, leaderboardButton;
+	private GameButton wordleButton, quizBowlButton, hangmanButton;
+	private JLabel usernameLabel;
 	
 	
 	/**

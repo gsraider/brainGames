@@ -44,42 +44,42 @@ public class HangMan extends JFrame implements Game, ActionListener {
 	 * An ArrayList meant to contain all of the possible words. Is populated by calling 
 	 * readWordBank() which pulls from hangman.txt.
 	 */
-	ArrayList<String> possibleWords = new ArrayList<String>();
+	private ArrayList<String> possibleWords = new ArrayList<String>();
 	
 	/**
 	 * An ArrayList that keeps track of what characters the user has guessed. Cleared 
 	 * every time a new round starts.
 	 */
-	ArrayList<Character> usedChars = new ArrayList<Character>();
+	private ArrayList<Character> usedChars = new ArrayList<Character>();
 	
 	
 	/**
 	 * The current hidden word to be guessed in the game. Chosen randomly from possibleWords 
 	 * when generateWord is called.
 	 */
-	String currWord;
+	private String currWord;
 	
 	/**
 	 * The current score. Increases by one for every word solved.
 	 */
-	int score = 0;
+	private int score = 0;
 	
 	/**
 	 * The number of incorrect guesses. Picture advances with it and resets every new round.
 	 */
-	int incorrectGuesses = 0;
+	private int incorrectGuesses = 0;
 	
 	/**
 	 * A string that is shown to the user that represents what they have guessed so far.
 	 */
-	String obscuredWord = "";
+	private String obscuredWord = "";
 	
 	// Components that interact with ActionListeners
-	JButton submitButton;
-	JTextField userInput, underscores;
-	JTextArea lettersBox;
-	JPanel topPanel, bottomPanel;
-	JLabel hangmanImage;
+	private JButton submitButton;
+	private JTextField userInput, underscores;
+	private JTextArea lettersBox;
+	private JPanel topPanel, bottomPanel;
+	private JLabel hangmanImage;
 	
 
 	/**
@@ -177,7 +177,7 @@ public class HangMan extends JFrame implements Game, ActionListener {
 	 * @param input the string read from the textbox
 	 */
 	
-	public void guess(String input) {
+	private void guess(String input) {
 		
 		// Standardizes input
 		input = input.toLowerCase();
@@ -230,7 +230,7 @@ public class HangMan extends JFrame implements Game, ActionListener {
 	 * last character, wins the round.
 	 * @param c the guessed character
 	 */
-	public void updateUnderscores(char c) {
+	private void updateUnderscores(char c) {
 		
 		int charCounter = -1; // Starts at -1 so the first character will be 0
 		
@@ -262,7 +262,7 @@ public class HangMan extends JFrame implements Game, ActionListener {
 	/**
 	 * Updates the picture of the stick figure with every incorrect guess.
 	 */
-	public void updatePicture() {
+	private void updatePicture() {
 		
 		switch (incorrectGuesses) {
 				
@@ -295,7 +295,7 @@ public class HangMan extends JFrame implements Game, ActionListener {
 	/**
 	 * Updates the score and resets fields and GUI, starting a new round.
 	 */
-	public void win() {
+	private void win() {
 		
 		// Updates score and resets fields
 		score += 1;
@@ -391,7 +391,7 @@ public class HangMan extends JFrame implements Game, ActionListener {
 	/**
 	 * Reads from hangman.txt to populate the ArrayList possibleWords.
 	 */
-	public void readWordBank() {
+	private void readWordBank() {
 		
 		try {
 			FileInputStream fileByteStream = new FileInputStream("resources\\hangman.txt");
@@ -420,7 +420,7 @@ public class HangMan extends JFrame implements Game, ActionListener {
 	/**
 	 * Randomly chooses a word to be the hidden word and updates the field currWord
 	 */
-	public void generateWord() {
+	private void generateWord() {
 		Random r = new Random();
 		currWord = possibleWords.get(r.nextInt(0,possibleWords.size()));
 	}

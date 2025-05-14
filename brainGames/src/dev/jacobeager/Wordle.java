@@ -42,30 +42,30 @@ public class Wordle extends JFrame implements Game, ActionListener {
 	 * An ArrayList meant to contain all of the possible words. Is populated by calling 
 	 * readWordBank() which pulls from wordle.txt
 	 */
-	ArrayList<String> possibleWords = new ArrayList<String>();
+	private ArrayList<String> possibleWords = new ArrayList<String>();
 	
 	/**
 	 * The current hidden word to be guessed in the game. Chosen randomly from possibleWords 
 	 * when generateWord is called.
 	 */
-	String currWord;
+	private String currWord;
 	
 	/**
 	 * The current score. Increases by one for every word solved.
 	 */
-	int score = 0;
+	private int score = 0;
 	
 	/**
 	 * The number of guesses used. Maxes out at 6 and resets every new game.
 	 */
-	int numGuesses = 0;
+	private int numGuesses = 0;
 	
 	// Array of text boxes, used to populate the letter grid
-	JTextField[] guessBoxes = new JTextField[30];
+	private JTextField[] guessBoxes = new JTextField[30];
 	
 	// Components that have an ActionListener
-	JButton guessButton;
-	JPanel centerLock;
+	private JButton guessButton;
+	private JPanel centerLock;
 
 	/**
 	 * Constructor that creates the GUI and begins the game.
@@ -120,7 +120,7 @@ public class Wordle extends JFrame implements Game, ActionListener {
 	/**
 	 * Reads from wordle.txt to populate the ArrayList possibleWords.
 	 */
-	public void readWordBank() {
+	private void readWordBank() {
 		
 		try {
 			FileInputStream fileByteStream = new FileInputStream("resources\\wordle.txt");
@@ -151,7 +151,7 @@ public class Wordle extends JFrame implements Game, ActionListener {
 	/**
 	 * Randomly chooses a word to be the hidden word and updates the field currWord.
 	 */
-	public void generateWord() {
+	private void generateWord() {
 		Random r = new Random();
 		currWord = possibleWords.get(r.nextInt(0,possibleWords.size()));
 	}
@@ -163,7 +163,7 @@ public class Wordle extends JFrame implements Game, ActionListener {
 	 * @param max the maximum index to search
 	 * @return a boolean representing if the guess is valid or not
 	 */
-	public boolean validateGuess(int min, int max) {
+	private boolean validateGuess(int min, int max) {
 		
 		boolean validInput = true;
 		
@@ -208,7 +208,7 @@ public class Wordle extends JFrame implements Game, ActionListener {
 	 * "Advances" in the game. Disables current row, enables next row, colors in boxes, and
 	 * checks for a win, ending the game if so. 
 	 */
-	public void advance() {
+	private void advance() {
 		String guess = "";
 		
 		// Disables previous row and colors in boxes
@@ -353,7 +353,7 @@ public class Wordle extends JFrame implements Game, ActionListener {
 	 * Resets everything back to the default state, keeping the increase in score and 
 	 * generating a new word.
 	 */
-	public void restartGame() {
+	private void restartGame() {
 		
 		// Picks a new word
 		generateWord();
