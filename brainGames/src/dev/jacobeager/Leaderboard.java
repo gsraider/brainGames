@@ -212,5 +212,5 @@ public class Leaderboard extends JFrame {
 			return Integer.compare(other.score, this.score);
 		}
 
-}
+	}
 }

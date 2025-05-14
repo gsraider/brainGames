@@ -10,6 +10,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -161,6 +162,37 @@ public class TitleFrame extends JFrame implements ActionListener {
 	public void setUsername(String username) {
 		usernameLabel.setText(username);
 		currUsername = username;
+	}
+	
+	
+	/**
+	 * This inner class is used for declaring the three game buttons on the title screen.
+	 * 
+	 * @author Jacob Eager
+	 * @version 1.0
+	 */
+	
+	@SuppressWarnings("serial")
+	private class GameButton extends JButton {
+		
+		/**
+		 * This constructor takes in the desired text and colors and creates a JButton with them.
+		 * @param text the text in the button
+		 * @param buttonColor the color of the button
+		 * @param textColor the color of the text
+		 */
+		private GameButton(String text, Color buttonColor, Color textColor) {
+			
+			// Button formatting
+			setText(text);
+			setBackground(buttonColor);
+			setFont(new Font("Helvetica", Font.BOLD, 20));
+			setForeground(textColor);
+			setBorder(BorderFactory.createLineBorder(Color.GRAY,5,true));
+			setFocusable(false);
+			setPreferredSize(new Dimension(150,150));
+			
+		}
 	}
 
 }
