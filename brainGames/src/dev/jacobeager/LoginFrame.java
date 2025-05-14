@@ -145,7 +145,7 @@ public class LoginFrame extends JFrame implements ActionListener {
 	 * @return if the password matches regex
 	 */
 	public static boolean validatePassword(String password) {
-		return Pattern.matches("[.]{8,}", password);
+		return Pattern.matches("[\\w!@#$%^&*]{8,}", password);
 	}
 	/**
 	 * Validates a password using regex according to the stated criteria (between 3 and 16
@@ -207,7 +207,7 @@ public class LoginFrame extends JFrame implements ActionListener {
                     		+ "like to create a new account?", "Warning",
                     		JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
                     	
-                	FileWriter outputStream = new FileWriter("resources\\\\loginDetails.txt", true);
+                	FileWriter outputStream = new FileWriter("resources\\loginDetails.txt", true);
                     BufferedWriter outFS = new BufferedWriter(outputStream);
                     	
                     outFS.write(username + "\n");

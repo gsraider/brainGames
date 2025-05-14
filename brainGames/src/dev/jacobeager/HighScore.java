@@ -7,19 +7,7 @@ package dev.jacobeager;
  * @version 1.0
  */
 
-public class HighScore implements Comparable<HighScore> {
-	
-	String user;
-	int score;
-	
-	public HighScore(String user, int score) {
-		this.user = user;
-		this.score = score;
-	}
-	
-	public void setScore(int score) {
-		this.score = score;
-	}
+public record HighScore(String user, int score) implements Comparable<HighScore> {
 
 	@Override
 	public String toString() {
